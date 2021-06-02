@@ -29,8 +29,8 @@ public class tempA {
     @Test
     public void testSomething() throws ExecutionException, InterruptedException {
         // Convenience methods to produce and consume messages
-        kafkaRule.helper().produceStrings("my-test-topic", "a", "b", "c", "d", "e");
-        List<String> result = kafkaRule.helper().consumeStrings("my-test-topic", 5).get();
+        kafkaRule.helper().produceStrings("TOPIC", "a", "b", "c", "d", "e");
+        List<String> result = kafkaRule.helper().consumeStrings("TOPIC", 5).get();
 
         // or use the built-in producers and consumers
         KafkaProducer<String, String> producer = kafkaRule.helper().createStringProducer();

@@ -24,7 +24,7 @@ import java.util.Set;
  * Confluent Schema Registry instance.
  */
 public class EmbeddedSingleNodeKafkaCluster extends ExternalResource {
-
+//
 //    private static final Logger log = LoggerFactory.getLogger(EmbeddedSingleNodeKafkaCluster.class);
 //    private static final int DEFAULT_BROKER_PORT = 0; // 0 results in a random port being selected
 //    private static final String KAFKA_SCHEMAS_TOPIC = "_schemas";
