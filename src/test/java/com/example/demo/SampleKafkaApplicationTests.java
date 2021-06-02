@@ -1,8 +1,8 @@
 package com.example.demo;
 
-import com.github.charithe.kafka.EphemeralKafkaBroker;
-import com.github.charithe.kafka.KafkaJunitRule;
-import com.google.common.collect.Lists;
+//import com.github.charithe.kafka.EphemeralKafkaBroker;
+//import com.github.charithe.kafka.KafkaJunitRule;
+//import com.google.common.collect.Lists;
 //import net.jodah.concurrentunit.Waiter;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
