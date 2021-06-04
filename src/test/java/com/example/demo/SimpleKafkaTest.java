@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import com.example.connect.ConnectEmbedded;
-import com.example.connect.SampleSinkConnector;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -9,7 +8,6 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.connect.runtime.ConnectorConfig;
 import org.apache.kafka.connect.sink.SinkConnector;
-import org.apache.kafka.connect.tools.MockSinkConnector;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,19 +44,18 @@ public class SimpleKafkaTest {
         producer.send(new ProducerRecord<>(TEST_TOPIC, 123, "my-test-value"));
         producer.flush();
         producer.close();
-       // MockSinkConnector
+        // MockSinkConnector
         Properties workerConfig = getDefault(embeddedKafkaBroker.getBrokersAsString());;
         String kafkaClusterId = embeddedKafkaBroker.getKafkaServer(0).clusterId();
         ConnectEmbedded connectEmbedded = new ConnectEmbedded(kafkaClusterId, workerConfig, getConnectorConfigs(TEST_TOPIC));
         connectEmbedded.start();
-        Thread.sleep(15000);
-
-
+        Thread.sleep(2000);
     }
+
     private Properties getConnectorConfigs(String topics) {
         Properties props = new Properties();
         props.put(SinkConnector.TOPICS_CONFIG, topics);
-        props.put(ConnectorConfig.TASKS_MAX_CONFIG, "2");
+        props.put(ConnectorConfig.TASKS_MAX_CONFIG, "1");
         props.put(ConnectorConfig.NAME_CONFIG, "sample-sink-connector");
         props.put(ConnectorConfig.CONNECTOR_CLASS_CONFIG, "com.example.connect.SampleSinkConnector");
         return props;

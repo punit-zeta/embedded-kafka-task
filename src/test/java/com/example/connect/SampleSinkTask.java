@@ -1,5 +1,6 @@
 package com.example.connect;
 
+import org.apache.kafka.clients.consumer.OffsetAndMetadata;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.connect.sink.SinkRecord;
 import org.apache.kafka.connect.sink.SinkTask;
@@ -9,7 +10,7 @@ import java.util.Map;
 
 public class SampleSinkTask extends SinkTask {
 
-    SampleSinkTask(){
+    public SampleSinkTask(){
         super();
     }
 
@@ -24,13 +25,13 @@ public class SampleSinkTask extends SinkTask {
     }
 
     @Override
-    public void open(Collection<TopicPartition> partitions) {
-        System.out.println(partitions.size());
+    public void put(Collection<SinkRecord> collection) {
+       System.out.println("put called -> size: " + collection.size());
     }
 
     @Override
-    public void put(Collection<SinkRecord> collection) {
-       System.out.println(collection.size());
+    public void flush(Map<TopicPartition, OffsetAndMetadata> currentOffsets) {
+        System.out.println("flush called");
     }
 
     @Override
