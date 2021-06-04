@@ -1,36 +1,36 @@
 package com.example.demo;
 
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.serialization.LongDeserializer;
-import org.apache.kafka.common.serialization.Serde;
-import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
-import org.apache.kafka.streams.KafkaStreams;
-import org.apache.kafka.streams.KeyValue;
-import org.apache.kafka.streams.StreamsConfig;
-import org.apache.kafka.streams.kstream.KStream;
+//import org.apache.kafka.clients.consumer.ConsumerConfig;
+//import org.apache.kafka.clients.producer.ProducerConfig;
+//import org.apache.kafka.common.serialization.LongDeserializer;
+//import org.apache.kafka.common.serialization.Serde;
+//import org.apache.kafka.common.serialization.Serdes;
+//import org.apache.kafka.common.serialization.StringDeserializer;
+//import org.apache.kafka.common.serialization.StringSerializer;
+//import org.apache.kafka.streams.KafkaStreams;
+//import org.apache.kafka.streams.KeyValue;
+//import org.apache.kafka.streams.StreamsConfig;
+//import org.apache.kafka.streams.kstream.KStream;
 //import org.apache.kafka.streams.kstream.KStreamBuilder;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
-
-//import io.confluent.examples.streams.kafka.EmbeddedSingleNodeKafkaCluster;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
-/**
- * End-to-end integration test based on WordCountLambdaExample, using an embedded Kafka cluster.
- *
- * Note: This example uses lambda expressions and thus works with Java 8+ only.
- */
-public class WordCountLambdaIntegrationTest {
-
+//import org.junit.BeforeClass;
+//import org.junit.ClassRule;
+//import org.junit.Test;
+//
+//import java.util.Arrays;
+//import java.util.List;
+//import java.util.Properties;
+//
+////import io.confluent.examples.streams.kafka.EmbeddedSingleNodeKafkaCluster;
+//
+//import static org.assertj.core.api.Assertions.assertThat;
+//
+///**
+// * End-to-end integration test based on WordCountLambdaExample, using an embedded Kafka cluster.
+// *
+// * Note: This example uses lambda expressions and thus works with Java 8+ only.
+// */
+//public class WordCountLambdaIntegrationTest {
+//
 //    @ClassRule
 //    public static final EmbeddedSingleNodeKafkaCluster CLUSTER = new EmbeddedSingleNodeKafkaCluster();
 //
@@ -121,5 +121,5 @@ public class WordCountLambdaIntegrationTest {
 //        streams.close();
 //        assertThat(actualWordCounts).containsExactlyElementsOf(expectedWordCounts);
 //    }
-
-}
+//
+//}
